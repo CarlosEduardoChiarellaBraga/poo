@@ -1,0 +1,105 @@
+% ******************************************************************
+% Área do discente: Insira os seus dados e do problema selecionado.
+% ******************************************************************
+\def\discente{Beltrana(o) de tal}
+\def\matricula{20010101}
+\def\myprob{{999}} % Informe o número do problema selecionado.
+% ******************************************************************
+
+% ----------------------------------- Definições preliminares
+\documentclass[12pt]{article}
+%
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=0.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm,nohead,nofoot]{geometry}
+%
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[breakable]{tcolorbox}
+%
+% ======================================= Início do documento
+\begin{document}
+% ------------------------------------------------- Cabeçalho
+ \begin{tcolorbox}[rounded corners, colback=blue!3, colframe=blue!40!black]
+  \footnotesize\textbf{Universidade Federal de Goiás -- UFG}\hfill \textsc{Pesquisa Operacional -- 2024/2}\\
+  \footnotesize\textbf{Instituto de Informática -- INF\hfill Prof. Humberto J. Longo} -- \scriptsize\texttt{longo@ufg.br}
+ \end{tcolorbox}\bigskip
+%
+% ------------------------------------------------- Atividade
+\begin{tcolorbox}[rounded corners, colback=blue!3, colframe=blue!40!black, title=\textbf{Atividade AA-01 : \discente\ (\matricula)}]
+ Nesta tarefa deve ser proposto um modelo de Programação Linear para um problema selecionado e apresentada uma solução ótima para o mesmo. Cada aluna(o) deve escolher, na descrição da atividade AA--01 na disciplina INF0313A\_BCC da plataforma Turing, um dos problemas ali listados. As especificações detalhadas dos problemas estão disponíveis no arquivo ``Modelagem de problemas como PL e PLI'' da Seção ``Listas de exercícios''.
+\end{tcolorbox}\bigskip
+
+%
+% ------------------------------------- Descrição do problema selecionado.
+%=========================================================================
+\begin{tcolorbox}[rounded corners, colback=yellow!5, colframe=red!40!black, title=\textbf{Descrição do problema P-\myprob}]
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Uma empresa produz três tipos de portas a partir de um determinado material. Diariamente a empresa dispõe de 500Kg de material e 600 horas de trabalho. Como determinar um plano ótimo de produção que corresponda ao maior lucro? Material e horas de trabalho necessários para a produção de uma porta de cada tipo e lucro unitário obtido com a venda de cada uma:
+  \begin{center}\small
+   \begin{tabular}{lccc}
+%    \toprule
+    \cmidrule{2-4}
+                  & Porta 1 & Porta 2 & Porta 3 \\
+    \midrule
+    Material (Kg) & 8       & 4       & 3 \\
+    Trabalho (h)  & 7       & 6       & 8 \\
+    Lucro (R\$)   & 50      & 40      & 55 \\
+    \bottomrule
+   \end{tabular}
+  \end{center}
+\end{tcolorbox}\bigskip
+
+%
+% --------------------------------- Modelo PL para o problema selecionado.
+%=========================================================================
+\begin{tcolorbox}[rounded corners, breakable,colback=yellow!5, colframe=red!40!black, title=\textbf{Modelo PL para o problema P-\myprob}]
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ \begin{itemize}[topsep=0pt]
+  \item Variáveis de decisão:
+   \begin{description}[topsep=0pt,itemsep=0pt]
+    \item [$x_1$\,:] qtde. a ser produzida de portas do modelo 1;
+    \item [$x_2$\,:] qtde. a ser produzida de portas do modelo 2; e
+    \item [$x_3$\,:] qtde. a ser produzida de portas do modelo 3.
+   \end{description}
+%
+  \item Objetivo (maximizar o lucro $z$ com a venda das portas produzidas):
+   $$\max z= 50x_1 + 40x_2 + 55x_3.$$
+%
+  \item Restrições:
+   \begin{enumerate}[topsep=0pt,itemsep=0pt]
+    \item Limite de material disponível: $8x_1 + 4x_2 + 3x_3 \leqslant 500$.
+    \item Limite de horas de trabalho: $7x_1 + 6x_2 + 8x_3 \leqslant 600$.
+   \end{enumerate}
+%
+    \item Modelo de programação linear:
+    \small{
+     $$\begin{array}{rcrcrcl}
+        \multicolumn{7}{l}{\max\ z= 50x_1 + 40x_2 + 55x_3,} \\[4pt]
+        \multicolumn{7}{l}{\text{sujeito a}} \\[4pt]
+          8x_1 & + & 4x_2 & + & 3x_3 & \leqslant & 500;\\
+          7x_1 & + & 6x_2 & + & 8x_3 & \leqslant & 600;\\
+          x_1, &   & x_2, &   & x_3 & \in       & \mathbb{Z}^+.
+       \end{array}$$
+    }
+%
+    \item Solução ótima:
+     $$
+      \begin{array}{cccc}
+      \toprule
+      z^* (R\$) & x_1 & x_2 & x_3\\
+      \midrule
+      4.215,00  &  48 &   0 &  33\\
+      \bottomrule
+      \end{array}
+     $$
+ \end{itemize}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\end{tcolorbox}
+%=========================================================================
+\end{document}
+%
