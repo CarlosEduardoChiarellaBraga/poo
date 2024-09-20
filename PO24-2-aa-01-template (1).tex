@@ -1,9 +1,9 @@
 % ******************************************************************
 % Área do discente: Insira os seus dados e do problema selecionado.
 % ******************************************************************
-\def\discente{Beltrana(o) de tal}
+\def\discente{Carlos Eduardo Chiarella Braga}
 \def\matricula{20010101}
-\def\myprob{{999}} % Informe o número do problema selecionado.
+\def\myprob{{03}} % Informe o número do problema selecionado.
 % ******************************************************************
 
 % ----------------------------------- Definições preliminares
@@ -39,16 +39,26 @@
 %=========================================================================
 \begin{tcolorbox}[rounded corners, colback=yellow!5, colframe=red!40!black, title=\textbf{Descrição do problema P-\myprob}]
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- Uma empresa produz três tipos de portas a partir de um determinado material. Diariamente a empresa dispõe de 500Kg de material e 600 horas de trabalho. Como determinar um plano ótimo de produção que corresponda ao maior lucro? Material e horas de trabalho necessários para a produção de uma porta de cada tipo e lucro unitário obtido com a venda de cada uma:
-  \begin{center}\small
+Uma fábrica de brinquedos educativos de madeira desenvolveu um boneco articulado composto por dezesseis peças independentes. Cada uma das peças pode ser pintada de uma das cores: verde, amarelo,
+branco e azul. Além disso, há três “acessórios” opcionais (chapéu, óculos e saia) que também podem
+ser pintados por qualquer uma dessas cores. A capacidade máxima de produção mensal é de 1000
+bonecos, qualquer que seja a cor em que sejam produzidos e qualquer que seja o conjunto de acessórios
+incorporados. No entanto, a produção de bonecos com acessórios exige um operário especializado que,
+se produzir apenas bonecos com saia, consegue produzir independentemente da cor até 400 bonecos
+por mês. Por outro lado, se produzir apenas bonecos com chapéu e óculos consegue produzir, independentemente da cor, até 500 bonecos por mês. A tabela a seguir representa, para cada um dos tipos de
+bonecos, o lucro por unidade vendida e também a quantidade mínima a produzir por mês. Escreva um
+modelo de P.L. para o planejamento da produção.  \begin{center}\small
    \begin{tabular}{lccc}
 %    \toprule
-    \cmidrule{2-4}
-                  & Porta 1 & Porta 2 & Porta 3 \\
+    \cmidrule{4-4}
+    Brinquedo & Lucro (R\$) & Qtde Mínima \\
     \midrule
-    Material (Kg) & 8       & 4       & 3 \\
-    Trabalho (h)  & 7       & 6       & 8 \\
-    Lucro (R\$)   & 50      & 40      & 55 \\
+     Boneco simples, branco               & 5       & 200 \\
+     Boneco simples, colorido             & 4       & 100 \\
+     Boneco com chapéu e óculos, branco   & 5      & 100 \\
+     Boneco com chapéu e óculos, colorido & 15      & 100 \\
+     Boneco com saia, branco              & 7      & 100 \\
+     Boneco com saia, colorido            & 20      & 100 \\
     \bottomrule
    \end{tabular}
   \end{center}
