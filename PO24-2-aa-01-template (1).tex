@@ -99,11 +99,16 @@ modelo de P.L. para o planejamento da produção.  \begin{center}\small
     \item Modelo de programação linear:
     \small{
      $$\begin{array}{rcrcrcl}
-        \multicolumn{7}{l}{\max\ z= 50x_1 + 40x_2 + 55x_3,} \\[4pt]
+        \multicolumn{7}{l}{\max\ z= 5x_1 + 4x_2 + 5x_3 + 15x_4 + 7x_5 + 20x_6.,} \\[4pt]
         \multicolumn{7}{l}{\text{sujeito a}} \\[4pt]
-          8x_1 & + & 4x_2 & + & 3x_3 & \leqslant & 500;\\
-          7x_1 & + & 6x_2 & + & 8x_3 & \leqslant & 600;\\
-          x_1, &   & x_2, &   & x_3 & \in       & \mathbb{Z}^+.
+          x_1 & \geqslant & 200;\\
+          x_2 & \geqslant & 100;\\
+          x_3 & \geqslant & 100;\\
+          x_4 & \geqslant & 100;\\
+          x_5 & \geqslant & 100;\\
+          x_6 & \geqslant & 100;\\
+        x_1&+x_2 &+ x_3 &+ x_4 &+ x_5 &+ x_6 \leqslant & 1000;\\
+          (x_5+x_6)/400& + & (x_3+x_4)/500 & \leqslant & 1.\\
        \end{array}$$
     }
 %
